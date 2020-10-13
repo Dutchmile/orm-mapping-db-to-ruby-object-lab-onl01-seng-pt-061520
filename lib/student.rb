@@ -15,7 +15,13 @@ class Student
   end
 
   def self.find_by_name(name)
-    
+    sql = <<-SQL
+      SELECT * FROM students
+      where students.name = ?
+      LIMIT 1
+      SQL
+      row = DB[:conn].execute(sql, name)
+      
   end
   
   def save
