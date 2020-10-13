@@ -70,6 +70,7 @@ class Student
   end
   10th_grade_students
 end
+end
    
  
  
