@@ -32,8 +32,10 @@ class Student
       WHERE students.grade = 9
       SQL
       DB[:conn].execute(sql).map do [row]
-      grade_9_students << row
+      student = self.new_from_db(row)
+      grade_9_students << student
     end
+    grade_9_students
   end
   
   def save
