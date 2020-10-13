@@ -20,9 +20,10 @@ class Student
       WHERE students.name = ?
       LIMIT 1
       SQL
-      row = DB[:conn].execute(sql, name)
+      DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
-  end.first
+    end.first
+  end
   
   def save
     sql = <<-SQL
