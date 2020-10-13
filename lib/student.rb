@@ -17,7 +17,7 @@ class Student
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT * FROM students
-      where students.name = ?
+      WHERE students.name = ?
       LIMIT 1
       SQL
       row = DB[:conn].execute(sql, name)
