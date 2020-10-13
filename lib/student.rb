@@ -21,7 +21,7 @@ class Student
       LIMIT 1
       SQL
       row = DB[:conn].execute(sql, name)
-      
+      self.new_from_db(row)
   end
   
   def save
