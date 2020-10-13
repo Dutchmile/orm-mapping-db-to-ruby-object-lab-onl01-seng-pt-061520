@@ -22,7 +22,7 @@ class Student
       SQL
       row = DB[:conn].execute(sql, name)
       self.new_from_db(row)
-  end
+  end.first
   
   def save
     sql = <<-SQL
