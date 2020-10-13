@@ -16,7 +16,9 @@ class Student
    SQL
    DB[:conn].execute(sql).map do |row|
      new_student = self.new_from_db(row)
-     all_students << new_student 
+     all_students << new_student
+   end
+   all_students
   end
 
   def self.find_by_name(name)
