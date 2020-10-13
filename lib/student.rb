@@ -65,9 +65,10 @@ class Student
    WHERE students.grade = 10
   SQL
   DB[:conn].execute(sql).map do |row|
+    until row[0] > x
     student = self.new_from_db(row)
     students << student
-  end.first(x)
+  end
   students
 end
    
