@@ -68,6 +68,7 @@ class Student
     student = self.new_from_db(row)
     10th_grade_students << student
   end.first(integer)
+  10th_grade_students
 end
    
  
