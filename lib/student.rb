@@ -69,6 +69,7 @@ class Student
     student = self.new_from_db(row)
     students << student
   end
+  end
   students
 end
    
